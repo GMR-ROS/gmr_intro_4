@@ -91,7 +91,7 @@ E também um membro privado para manter o tempo da última requisição:
 Agora editaremos a implementação da classe em gmr_intro_poo/src/gmr_intro_poo.cpp. No construtor da classe RobotClass::RobotClass(ros::NodeHandle* nh), precisamos inicializar o cliente, obter o parâmetro e atribuir o valor inicial ao _prev_timestamp_toggle.
 ```cpp
 
-    _client_toggle_robot = _nh->serviceClient<std_srvs::Trigger>("/toggle_service");
+    _client_toggle_robot = _nh->serviceClient<std_srvs::Trigger>("/toggle_robot");
 
     _nh->param("time_between_toggles", _param.time_between_toggles, -1.0);
 
