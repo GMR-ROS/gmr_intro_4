@@ -1,6 +1,6 @@
 # Introdução de ROS e robôs móveis terrestres
 
-Após incrementarmos RobotClass com o [publicador de odometria](https://github.com/akihirohh/gmr_intro_3), vamos explorar um pouco de serviços. 
+Após incrementarmos RobotClass com o [publicador de odometria](https://bitbucket.org/grupomecatronica/gmr_intro_3), vamos explorar um pouco de serviços. 
 
 ## ROS Services
 
@@ -8,7 +8,7 @@ Os serviços ROS são uma alternativa ao modelo publicador-subscritor, em que a 
 
 Assim como os tópicos utilizam mensagens ROS para carregar suas informações, os serviços possuem suas formas estruturadas de informação. Por exemplo, informações sobre o serviço roscpp_tutorials/TwoInts podem ser obtidas com: 
 ```console
-user@pc:~/$ rossrv info roscpp_tutorials/TwoInts
+user@pc:~$ rossrv info roscpp_tutorials/TwoInts
 int64 a
 int64 b
 ---
@@ -17,7 +17,7 @@ int64 sum
 
 Observe que a descrição de um serviço possui duas seções, delimitadas pelo marcador `---`. A primeira seção possui os dados referentes ao cliente. Já a segunda contém a resposta envia pelo servidor após executar o serviço. Neste caso, o cliente envia dois inteiros, a e b, e o servidor retorna a soma deles, sum. Agora observe o serviço std_srvs/Trigger:
 ```console
-user@pc:~/$ rossrv info std_srvs/Trigger
+user@pc:~$ rossrv info std_srvs/Trigger
 ---
 bool success
 string message
@@ -58,7 +58,7 @@ Observe que recebemos a resposta do servidor e se olharmos a saída de nosso gmr
 
 ## Requisição de serviços dentro de um nó ROS em C++
 
-Veremos agora como fazer a requisição do serviço por código. Vamos incrementar o nosso RobotClass(https://github.com/akihirohh/gmr_intro_poo/tree/gmr_intro_3) para que ele chame /toggle_robot a cada n segundos, em que n é um parâmetro ROS. Primeiro, editaremos o cabeçalho da classe em gmr_intro_poo/include/gmr_intro_poo/gmr_intro_poo.hpp, adicionando a biblioteca relacionada ao serviço:
+Veremos agora como fazer a requisição do serviço por código. Vamos incrementar o nosso RobotClass(https://bitbucket.org/grupomecatronica/gmr_intro_poo/tree/gmr_intro_3) para que ele chame /toggle_robot a cada n segundos, em que n é um parâmetro ROS. Primeiro, editaremos o cabeçalho da classe em gmr_intro_poo/include/gmr_intro_poo/gmr_intro_poo.hpp, adicionando a biblioteca relacionada ao serviço:
 
 ```cpp
 #include <std_srvs/Trigger.h>
@@ -148,11 +148,11 @@ Por fim, devemos adicionar o parâmetro time_between_toggles ao gmr_intro_poo/la
 
 Agora que editamos todos os arquivos, compile
 ```console
-user@pc:~/ros_ws: $catkin_make
+user@pc:~/ros_ws$ catkin_make
 ```
 e rode o arquivo launch:
 ```console
-user@pc:~/: $roslaunch gmr_intro_poo robot.launch
+user@pc:~$ roslaunch gmr_intro_poo robot.launch
 ```
 Observe que teremos uma saída do tipo:
 ```
@@ -252,7 +252,7 @@ Observe que a função tem um formato padrão. Ela retorna booleano e possui doi
 
 De forma similar ao subscritor, o servidor só precisa ser inicializado, mas não precisa ser chamado posteriormente. Basta que haja um ros::spin ou um loop com ros::spinOnce que a função associada ao servidor será executada quando for solicitada por alguém.
 
-Os códigos estão disponíveis em [gmr_intro_poo](https://github.com/akihirohh/gmr_intro_poo) no branch gmr_intro_4. Com isso, a nossa classe RobotClass adquiriu o poder de requisitar o serviço /toggle_robot. No próximo tutorial, veremos a ferramenta de visualização rviz.
+Os códigos estão disponíveis em [gmr_intro_poo](https://bitbucket.org/grupomecatronica/gmr_intro_poo) no branch gmr_intro_4. Com isso, a nossa classe RobotClass adquiriu o poder de requisitar o serviço /toggle_robot. No próximo tutorial, veremos a ferramenta de visualização rviz.
 
 
 *Para um outro exemplo de ROS services, inclusive abordando a criação de um serviço personalizado, veja o post de [Embarcados](https://www.embarcados.com.br/ros-services/).*
