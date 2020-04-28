@@ -257,3 +257,5 @@ Os códigos estão disponíveis em [gmr_intro_poo](https://bitbucket.org/grupome
 
 *Para um outro exemplo de ROS services, inclusive abordando a criação de um serviço personalizado, veja o post de [Embarcados](https://www.embarcados.com.br/ros-services/).*
 
+
+Contato: Akihiro (akihirohh@gmail.com)
