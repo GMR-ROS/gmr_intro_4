@@ -259,3 +259,6 @@ Os códigos estão disponíveis em [gmr_intro_poo](https://bitbucket.org/grupome
 
 
 Contato: Akihiro (akihirohh@gmail.com)
+
+Apoio da Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP) através do processo nº 2018/10894-2. 
+As opiniões, hipóteses e conclusões ou recomendações expressas neste material são de responsabilidade do(s) autor(es) e não necessariamente refletem a visão da FAPESP.
